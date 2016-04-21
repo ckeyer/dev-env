@@ -1,0 +1,4 @@
+FROM alpine:edge
+MAINTAINER ckeyer <me@ckeyer.com>
+
+RUN apk add --update git vim make wget
