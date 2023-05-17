@@ -11,4 +11,4 @@ COPY ./client_linux_amd64 /usr/bin/client_linux_amd64
 COPY ./shadowsocks2-linux /usr/bin/shadowsocks2-linux
 COPY ./supervisor.d/cli.ini /etc/supervisor.d/cli.ini
 
-EXPOSE 1080/tcp 9000/udp
+EXPOSE 1080/tcp 9000/tcp
