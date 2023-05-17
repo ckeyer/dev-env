@@ -1,0 +1,13 @@
+FROM ckeyer/dev:supervisor
+
+ENV SS_METHOD=AEAD_CHACHA20_POLY1305
+ENV SS_PASSWORD=123456
+ENV KCP_KEY=123456
+ENV KCP_CRYPT=aes
+ENV KCP_MODE=fast3
+
+COPY ./server_linux_amd64 /usr/bin/server_linux_amd64
+COPY ./shadowsocks2-linux /usr/bin/shadowsocks2-linux
+COPY ./supervisor.d/svr.ini /etc/supervisor.d/svr.ini
+
+EXPOSE 18080/tcp 29900/udp

@@ -1,0 +1,14 @@
+FROM ckeyer/dev:supervisor
+
+ENV SS_METHOD=AEAD_CHACHA20_POLY1305
+ENV SS_PASSWORD=123456
+ENV KCP_KEY=123456
+ENV KCP_CRYPT=aes
+ENV KCP_MODE=fast3
+ENV KCP_REMOTEADDR=ss.ckeyer.com:29900
+
+COPY ./client_linux_amd64 /usr/bin/client_linux_amd64
+COPY ./shadowsocks2-linux /usr/bin/shadowsocks2-linux
+COPY ./supervisor.d/cli.ini /etc/supervisor.d/cli.ini
+
+EXPOSE 1080/tcp 9000/udp
